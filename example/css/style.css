@@ -2,16 +2,17 @@ body{
     margin: 0;
     padding: 0;
     background-color: darkslategray;
+    color: white;
 }
 
 div#Oneline{
     height: 30px;
-    color: white;
 }
 
 div.number{
     float: left;
-    width: 32px;
+    width: 48px;
+    margin-right: 8px;
     text-align: right;
 }
 
@@ -23,6 +24,6 @@ div#text{
     font-size: 16px;
 }
 
-div#lineSper{
+div#lineSepr{
     font-size: 16px;
 }
