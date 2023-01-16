@@ -1,29 +1,60 @@
+:root{
+    --textsize: 18px;
+}
+
 body{
+    width: 100vw; height: 100vh;
     margin: 0;
     padding: 0;
-    background-color: darkslategray;
+    background-color: slategray;
     color: white;
 }
 
-div#Oneline{
-    height: 30px;
+div{
+    box-sizing: border-box;
 }
 
-div.number{
+div#AreaNum{
     float: left;
-    width: 48px;
-    margin-right: 8px;
+    height: 100%; width: calc(val(--textsize) * 3);
+    background-color: darkslategray;
+}
+
+div.OneNum{
+    padding-top: calc(var(--textsize) * 0.2);
+    padding-bottom: calc(var(--textsize) * 0.2);
+    width: 100%; height: calc(var(--textsize) * 1.4);    
+}
+
+div.OneNum > div.Num{
     text-align: right;
+    font-style: sans-serif;
+    color: lightgray;
 }
 
-div#textarea{
+div.OneNum > div.Box{
+    float: right;
+    width: var(--textsize); height: var(--textsize);
+}
+
+div#AreaLine{
     display: inline-block;
+    width: 100%; height: 100%;
+    font-size: var(--textsize);
+    padding-left: 4px;
+    padding-top: calc(var(--textsize) * 0.2);
 }
 
-div#text{
-    font-size: 16px;
+div.OneLine{
+    height: 100%; width: 100%;
 }
 
-div#lineSepr{
-    font-size: 16px;
+div.OneLine > div.LineText{
+    height: var(--textsize); font-size: var(--textsize);
+    color: white;
+}
+
+div.OneLine > div.LineSepr{
+    height: calc(var(--textsize) * 0.4); width: 100%;
+    color: gray;
 }
