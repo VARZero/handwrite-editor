@@ -10,10 +10,6 @@ body{
     color: white;
 }
 
-div{
-    box-sizing: border-box;
-}
-
 div#AreaNum{
     float: left;
     height: 100%; width: calc(val(--textsize) * 3);
