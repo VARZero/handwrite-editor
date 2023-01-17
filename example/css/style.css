@@ -1,19 +1,25 @@
 :root{
-    --textsize: 18px;
+    --textsize: 16px;
 }
 
 body{
-    width: 100vw; height: 100vh;
+    width: 100vw;
+    height: 100vh;
     margin: 0;
     padding: 0;
-    background-color: slategray;
+    background-color: #001022;
+    font-family: "D2Coding" ,Menlo, Monaco, 'Courier New', monospace;
     color: white;
 }
 
+div#editor{
+    display: flex;
+}
+
 div#AreaNum{
-    float: left;
-    height: 100%; width: calc(var(--textsize) * 3);
-    background-color: darkslategray;
+    height: 100vh;
+    min-width: calc(var(--textsize) * 4);
+    background-color: #002033;
 }
 
 div.OneNum{
@@ -26,19 +32,26 @@ div.OneNum > div.Num{
     text-align: right;
     font-style: sans-serif;
     color: lightgray;
+    display: inline-block;
+    width: calc(calc(100% - 4px) - var(--textsize));
+    margin-left: 2px;
 }
 
 div.OneNum > div.Box{
     float: right;
-    width: var(--textsize); height: var(--textsize);
+    width: var(--textsize);
+    height: var(--textsize);
+    color: gray;
 }
 
 div#AreaLine{
-    display: inline-block;
-    width: 100%; height: 100%;
+    width: 100%;
+    height: 100%;
     font-size: var(--textsize);
-    padding-left: 4px;
+    padding-left: 10px;
     padding-top: calc(var(--textsize) * 0.2);
+    box-sizing: border-box;
+    white-space: nowrap;
 }
 
 div.OneLine{
