@@ -67,3 +67,11 @@ div.OneLine > div.LineSepr{
     height: calc(var(--textsize) * 0.4); width: 100%;
     color: gray;
 }
+
+div.LineSepr > canvas{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:  100%;
+    height: 100%;
+}
