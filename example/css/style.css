@@ -64,7 +64,7 @@ div.OneLine > div.LineText{
 }
 
 div.OneLine > div.LineSepr{
-    height: calc(var(--textsize) * 0.4); width: 100%;
+    height: calc(var(--textsize) * 0.8); width: 100%;
     color: gray;
 }
 
