@@ -13,4 +13,18 @@ function LineClick(event){
         El.style.height = "calc(var(--textsize) * 3.8);";
         NumEl.style.height = "calc(var(--textsize) * 4.4);";
     }
+    NumEl += " selecting"
+    El.className += " editing"
 }
+
+document.addEventListener("click", function(){
+    selecting = document.querySelector(".selecting");
+    selecting.style.height = "";
+    selecting.className.replace(" selecting", "");
+
+    editing = document.querySelector(".editing");
+    editing.style.height = "";
+    editing.style.fontSize = "";
+    editing.style.fontFamily = "";
+    editing.className.replace(" editing", "");
+})
