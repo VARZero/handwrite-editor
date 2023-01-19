@@ -31,10 +31,12 @@ div.OneNum{
 }
 
 div.OneNum.Selecting{
+    transition-property: height; transition-duration: 0.5s;
     height: calc(var(--textsize) * 5.4);
 }
 
 div.OneNum.NewLine{
+    transition-property: height; transition-duration: 0.5s;
     height: calc(var(--textsize) * 4.4);
 }
 
@@ -75,6 +77,8 @@ div.OneLine > div.LineText{
 }
 
 div.OneLine > div.LineText.Editing{
+    transition-property: height; transition-duration: 0.5s;
+    transition-property: font-size; transition-duration: 0.5s;
     height: calc(var(--textsize) * 5);
     font-size: calc(var(--textsize) * 1.5);
     font-family: 'Shadows Into Light';
@@ -86,6 +90,7 @@ div.OneLine > div.LineSepr{
 }
 
 div.OneLine > div.LineSepr.Editing{
+    transition-property: height; transition-duration: 0.5s;
     height: calc(var(--textsize) * 3.8);
 }
 
