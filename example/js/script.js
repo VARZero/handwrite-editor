@@ -1,4 +1,4 @@
-function LineClick(event){
+/*function LineClick(event){
     line = event.currentTarget
     El = event.Target;
     console.log(line); console.log(El);
@@ -27,4 +27,4 @@ document.addEventListener("click", function(){
     editing.style.fontSize = "";
     editing.style.fontFamily = "";
     editing.className.replace(" editing", "");
-})
+})*/
