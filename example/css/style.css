@@ -30,6 +30,14 @@ div.OneNum{
     width: 100%; height: calc(var(--textsize) * 1.4);    
 }
 
+div.OneNum.Selecting{
+    height: calc(var(--textsize) * 5.4);
+}
+
+div.OneNum.NewLine{
+    height: calc(var(--textsize) * 4.4);
+}
+
 div.OneNum > div.Num{
     text-align: right;
     font-style: sans-serif;
@@ -66,9 +74,19 @@ div.OneLine > div.LineText{
     color: white;
 }
 
+div.OneLine > div.LineText.Editing{
+    height: calc(var(--textsize) * 5);
+    font-size: calc(var(--textsize) * 1.5);
+    font-family: 'Shadows Into Light';
+}
+
 div.OneLine > div.LineSepr{
     height: calc(var(--textsize) * 0.8); width: 100%;
     color: gray;
+}
+
+div.OneLine > div.LineSepr.Editing{
+    height: calc(var(--textsize) * 3.8);
 }
 
 div.LineSepr > canvas{
