@@ -60,13 +60,14 @@ div#AreaLine{
     width: 100%;
     height: 100%;
     font-size: var(--textsize);
-    padding-left: 10px;
     padding-top: calc(var(--textsize) * 0.2);
     box-sizing: border-box;
     white-space: nowrap;
 }
 
 div.OneLine{
+    box-sizing: border-box;
+    padding-left: 4px;
     height: 100%; width: 100%;
     user-select: none;
 }

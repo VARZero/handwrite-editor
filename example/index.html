@@ -7,6 +7,7 @@
     <title>Untitled - Handwrite-editor</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js"></script>
+    <script src='https://unpkg.com/tesseract.js@4.0.1/dist/tesseract.min.js'></script>
 </head>
 <body>
     <div id="editor">
@@ -14,7 +15,7 @@
             <div class="OneNum" id="1"> <div class="Num">1</div> <div class="Box">∨</div> </div>
             <div class="OneNum" id="2"> <div class="Num">2</div> <div class="Box">∨</div> </div>
             <div class="OneNum" id="3"> <div class="Num">3</div> <div class="Box">∨</div> </div>
-            <div class="OneNum Selecting" id="4"> <div class="Num">4</div> <div class="Box">∨</div> </div>
+            <div class="OneNum" id="4"> <div class="Num">4</div> <div class="Box">∨</div> </div>
             <div class="OneNum" id="5"> <div class="Num">5</div> <div class="Box">∨</div> </div>
         </div>
         <div id="AreaLine">
@@ -31,7 +32,7 @@
                 <div class="LineSepr">--- ---</div>
             </div>
             <div class="OneLine" id="4">
-                <div class="LineText Editing">text 4 here</div>
+                <div class="LineText">text 4 here</div>
                 <div class="LineSepr">--- ---</div>
             </div>
             <div class="OneLine" id="5">

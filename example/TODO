@@ -1,0 +1,6 @@
+에디터 남는공간 클릭했을때 Line Select가 취소되게 하기
+Num을 클릭했을때 Line Select가 취소되게 하기
+각각 요소 꽉 채우는 캔버스 태그 추가해서 손글씨 입력 받을수 있게 하기
+tessarect.js 연동시키기
+poinerEvent의 pointerType 이용해서 스타일러스만 손글씨 입력할수 있게 하기 (옵션으로 사용여부 추가하기)
+https://velog.io/@tataki26/%EA%B7%BC%EB%AC%B4-%EC%9D%BC%EC%A7%80-VS-Code-Extension-%EC%8A%A4%ED%84%B0%EB%94%943 참조해서 VSCode 익스텐션으로 만들기
