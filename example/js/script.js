@@ -18,7 +18,7 @@ function LineClick(event){
     Line.removeEventListener("pointerdown", LineClick);
     LineType = Line.className;
     Line.className += "Editing";
-    Num = document.querySelector("#"+LineNum+".OneNum");
+    Num = document.querySelector("#L_"+LineNum+".OneNum");
     if (LineType == "LineText"){ Num.className += "Selecting"; }
     else if (LineType == "LineSepr"){ Num.className += "NewLine"; }
 }
