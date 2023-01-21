@@ -23,8 +23,10 @@ function LineClick(event){
     else if (LineType == "LineSepr"){ Num.ClassName += "NewLine"; }
 }
 
-LTs = document.getElementsByClassName("LineText");
-LSs = document.getElementsByClassName("LineSepr");
+window.onload = function(){
+    LTs = document.getElementsByClassName("LineText");
+    LSs = document.getElementsByClassName("LineSepr");
 
-for (LTo of LTs){ LTo.addEvetnListener("pointerdown", TextClick); }
-for (LSo of LSs){ LSo.addEvetnListener("pointerdown", TextClick); }
+    for (LTo of LTs){ LTo.addEvetnListener("pointerdown", TextClick); }
+    for (LSo of LSs){ LSo.addEvetnListener("pointerdown", TextClick); }
+}
