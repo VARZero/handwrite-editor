@@ -3,7 +3,7 @@ function processPostElem(){
     postEdit = document.getElementsByClassName("Editing");
     if (postEdit.length != 0){
         postEdit[0].classList.remove("Editing");
-        postEdit[0].addEvetnListener("pointerdown", LineClick);
+        postEdit[0].addEventListener("pointerdown", LineClick);
         document.getElementsByClassName("Selecting")[0].classList.remove("Selecting");
     }
 }
@@ -17,10 +17,10 @@ function LineClick(event){
     // 이벤트 무력화 및 편집상태 적용
     Line.removeEventListener("pointerdown", LineClick);
     LineType = Line.className;
-    Line.className += "Editing";
-    Num = document.querySelector("#L_"+LineNum+".OneNum");
-    if (LineType == "LineText"){ Num.className += "Selecting"; }
-    else if (LineType == "LineSepr"){ Num.className += "NewLine"; }
+    Line.className += " Editing";
+    Num = document.querySelector("#"+LineNum+".OneNum");
+    if (LineType == "LineText"){ Num.className += " Selecting"; }
+    else if (LineType == "LineSepr"){ Num.className += " NewLine"; }
 }
 
 window.onload = function(){
