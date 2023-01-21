@@ -4,7 +4,13 @@ function processPostElem(){
     if (postEdit.length != 0){
         postEdit[0].classList.remove("Editing");
         postEdit[0].addEventListener("pointerdown", LineClick);
-        document.getElementsByClassName("Selecting")[0].classList.remove("Selecting");
+        postSelc = document.getElementsByClassName("Selecting");
+        if (postSelc.length != 0){
+            postSelc[0].classList.remove("Selecting");
+        }
+        else{
+            document.getElementsByClassName("NewLine")[0].classList.remove("NewLine");
+        }
     }
 }
 
@@ -22,6 +28,8 @@ function LineClick(event){
     if (LineType == "LineText"){ Num.className += " Selecting"; }
     else if (LineType == "LineSepr"){ Num.className += " NewLine"; }
 }
+
+function NewLine
 
 window.onload = function(){
     LTs = document.getElementsByClassName("LineText");
