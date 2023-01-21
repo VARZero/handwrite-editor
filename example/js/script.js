@@ -29,7 +29,9 @@ function LineClick(event){
     else if (LineType == "LineSepr"){ Num.className += " NewLine"; }
 }
 
-function NewLine
+function NewLine(){
+    
+}
 
 window.onload = function(){
     LTs = document.getElementsByClassName("LineText");
