@@ -15,7 +15,7 @@ function LineClick(event){
     processPostElem();
 
     // 이벤트 무력화 및 편집상태 적용
-    Line.removeEventListener("pointerdown", TextClick);
+    Line.removeEventListener("pointerdown", LineClick);
     LineType = Line.ClassName;
     Line.ClassName += "Editing";
     Num = document.querySelector("#"+LineNum+".OneNum");
@@ -27,6 +27,6 @@ window.onload = function(){
     LTs = document.getElementsByClassName("LineText");
     LSs = document.getElementsByClassName("LineSepr");
 
-    for (LTo of LTs){ LTo.addEvetnListener("pointerdown", TextClick); }
-    for (LSo of LSs){ LSo.addEvetnListener("pointerdown", TextClick); }
+    for (LTo of LTs){ LTo.addEvetnListener("pointerdown", LineClick); }
+    for (LSo of LSs){ LSo.addEvetnListener("pointerdown", LineClick); }
 }
