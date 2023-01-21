@@ -10,7 +10,7 @@ function processPostElem(){
 
 function LineClick(event){
     Line = event.Target;
-    LineNum = Line.parentsNode.id;
+    LineNum = Line.parentNode.id;
 
     processPostElem();
 
