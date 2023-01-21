@@ -1,7 +1,7 @@
 function processPostElem(){
     // 이전 편집상태 삭제
     postEdit = document.getElementsByClassName("Editing");
-    if (postEdit.lenght != 0){
+    if (postEdit.length != 0){
         postEdit[0].classList.remove("Editing");
         postEdit[0].addEvetnListener("pointerdown", LineClick);
         document.getElementsByClassName("Selecting")[0].classList.remove("Selecting");
@@ -9,18 +9,18 @@ function processPostElem(){
 }
 
 function LineClick(event){
-    Line = event.Target;
+    Line = event.target;
     LineNum = Line.parentNode.id;
 
     processPostElem();
 
     // 이벤트 무력화 및 편집상태 적용
     Line.removeEventListener("pointerdown", LineClick);
-    LineType = Line.ClassName;
-    Line.ClassName += "Editing";
+    LineType = Line.className;
+    Line.className += "Editing";
     Num = document.querySelector("#"+LineNum+".OneNum");
-    if (LineType == "LineText"){ Num.ClassName += "Selecting"; }
-    else if (LineType == "LineSepr"){ Num.ClassName += "NewLine"; }
+    if (LineType == "LineText"){ Num.className += "Selecting"; }
+    else if (LineType == "LineSepr"){ Num.className += "NewLine"; }
 }
 
 window.onload = function(){
