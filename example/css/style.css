@@ -78,11 +78,20 @@ div.OneLine > div.LineText{
 }
 
 div.OneLine > div.LineText.Editing{
-    transition-property: height; transition-duration: 0.5s;
-    transition-property: font-size; transition-duration: 0.5s;
+    transition-property: height; transition-duration: 0.3s;
+    transition-property: font-size; transition-duration: 0.3s;
     height: calc(var(--textsize) * 5);
     font-size: calc(var(--textsize) * 1.5);
     font-family: 'Shadows Into Light';
+}
+
+div.LineText.Editing > canvas{
+    position: absolute;
+    background-color: red; opacity: 0.4;
+    top: 0;
+    left: 0;
+    width:  100%;
+    height: 100%;
 }
 
 div.OneLine > div.LineSepr{
@@ -91,12 +100,13 @@ div.OneLine > div.LineSepr{
 }
 
 div.OneLine > div.LineSepr.Editing{
-    transition-property: height; transition-duration: 0.5s;
+    transition-property: height; transition-duration: 0.3s;
     height: calc(var(--textsize) * 3.8);
 }
 
 div.LineSepr > canvas{
     position: absolute;
+    background-color: red; opacity: 0.4;
     top: 0;
     left: 0;
     width:  100%;
