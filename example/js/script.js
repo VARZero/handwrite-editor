@@ -27,6 +27,6 @@ window.onload = function(){
     LTs = document.getElementsByClassName("LineText");
     LSs = document.getElementsByClassName("LineSepr");
 
-    for (LTo of LTs){ LTo.addEvetnListener("pointerdown", LineClick); }
-    for (LSo of LSs){ LSo.addEvetnListener("pointerdown", LineClick); }
+    for (LTo of LTs){ LTo.addEventListener("pointerdown", LineClick); }
+    for (LSo of LSs){ LSo.addEventListener("pointerdown", LineClick); }
 }
