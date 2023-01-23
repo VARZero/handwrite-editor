@@ -27,12 +27,18 @@ function LineClick(event){
     Line.className += " Editing";
     Num = document.querySelector("#"+LineNum+".OneNum");
     if (LineType == "LineText"){ Num.className += " Selecting"; }
-    else if (LineType == "LineSepr"){ Num.className += " NewLine"; }
-    //Line.createElement('canvas');
+    else if (LineType == "LineSepr"){ Num.className += " NewLine"; NewLine(Line); }
 }
 
-function NewLine(){
+function EditLine(Line){
+    TextLineRight = document.createElement("canvas"); TextLineRight.id = "cright";
+    TextLineBottom = document.createElement("canvas"); TextLineBottom.id = "cbottom";
+    Line.appendChild(TextLineRight); Line.appendChild(TextLineBottom);
+}
 
+function NewLine(Sepr){
+    TextCanv = document.createElement("canvas");
+    Sepr.appendChild(TextCanv);
 }
 
 window.onload = function(){
