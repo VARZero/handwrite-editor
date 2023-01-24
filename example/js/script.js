@@ -1,3 +1,5 @@
+let charsize, tabsize;
+
 function processPostElem(){
     // 이전 편집상태 삭제
     postEdit = document.getElementsByClassName("Editing");
@@ -43,6 +45,9 @@ function NewLine(Sepr){
 }
 
 window.onload = function(){
+    charsize = document.getElementById("charsize").offsetWidth;
+    tabsize = charsize * 4;
+
     LTs = document.getElementsByClassName("LineText");
     LSs = document.getElementsByClassName("LineSepr");
 
