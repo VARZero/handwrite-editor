@@ -48,6 +48,9 @@ window.onload = function(){
     charsize = document.getElementById("charsize").offsetWidth;
     tabsize = charsize * 4;
 
+    editor = document.getElementById('editor');
+    editor.addEventListener('pointover', console.log(event));
+
     LTs = document.getElementsByClassName("LineText");
     LSs = document.getElementsByClassName("LineSepr");
 
