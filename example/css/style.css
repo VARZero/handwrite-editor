@@ -78,6 +78,7 @@ div.OneLine > div.LineText{
 }
 
 div.OneLine > div.LineText.Editing{
+    position: relative;
     transition-property: height; transition-duration: 0.3s;
     transition-property: font-size; transition-duration: 0.3s;
     height: calc(var(--textsize) * 5);
@@ -100,6 +101,7 @@ div.OneLine > div.LineSepr{
 }
 
 div.OneLine > div.LineSepr.Editing{
+    position: relative;
     transition-property: height; transition-duration: 0.3s;
     height: calc(var(--textsize) * 3.8);
 }
