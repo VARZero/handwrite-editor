@@ -3,7 +3,8 @@ function processPostElem(){
     postEdit = document.getElementsByClassName("Editing");
     if (postEdit.length != 0){
         postEdit[0].addEventListener("pointerdown", LineClick);
-        //postEdit[0].querySelector('canvas').remove(); // 이부분은 나중에 처리로직으로 변경하고 그 로직의 끝이 remove코드
+        canvList = document.querySelectorAll('div.Editing'+' > canvas'); // 이부분은 나중에 처리로직으로 변경하고 그 로직의 끝이 remove코드
+        for(canvOne of canvOne){canvOne.remove();}
         postEdit[0].classList.remove("Editing");
         postSelc = document.getElementsByClassName("Selecting");
         if (postSelc.length != 0){
