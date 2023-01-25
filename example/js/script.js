@@ -49,7 +49,7 @@ window.onload = function(){
     tabsize = charsize * 4;
 
     editor = document.getElementById('editor');
-    editor.addEventListener("pointerenter", console.log(event));
+    editor.addEventListener("pointerover", console.log(event));
 
     LTs = document.getElementsByClassName("LineText");
     LSs = document.getElementsByClassName("LineSepr");
