@@ -50,7 +50,7 @@ window.onload = function(){
 
     editor = document.getElementById('editor');
     editor.addEventListener("pointerover", function(e){console.log(e);});
-    editor.addEventListener("pointerup", function(e){console.log(e);})
+    editor.addEventListener("pointerleave", function(e){console.log(e);})
 
     LTs = document.getElementsByClassName("LineText");
     LSs = document.getElementsByClassName("LineSepr");
