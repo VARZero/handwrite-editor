@@ -1,4 +1,5 @@
 let charsize, tabsize;
+let palmRjEnable;
 
 function processPostElem(){
     // 이전 편집상태 삭제
@@ -42,6 +43,11 @@ function EditLine(Line){
 function NewLine(Sepr){
     TextCanv = document.createElement("canvas");
     Sepr.appendChild(TextCanv);
+}
+
+function palmRejection(){
+    // 팜리젝션
+    
 }
 
 window.onload = function(){
