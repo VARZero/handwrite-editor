@@ -1,5 +1,6 @@
 let charsize, tabsize;
-let palmRjEnable;
+let palmRjEnable = 0;
+let EnableCanv = null;
 
 function processPostElem(){
     // 이전 편집상태 삭제
@@ -35,9 +36,11 @@ function LineClick(event){
 }
 
 function EditLine(Line){
+    TextOn = document.createElement("canvas"); TextOn.id = "ton";
+    TextArea = document.querySelector("div.Editing > span");
     TextLineRight = document.createElement("canvas"); TextLineRight.id = "cright";
     TextLineBottom = document.createElement("canvas"); TextLineBottom.id = "cbottom";
-    Line.appendChild(TextLineRight); Line.appendChild(TextLineBottom);
+    TextArea.appendChild(TextOn); Line.appendChild(TextLineRight); Line.appendChild(TextLineBottom);
 }
 
 function NewLine(Sepr){
@@ -49,6 +52,8 @@ function palmRejection(){
     // 팜리젝션
     
 }
+
+
 
 window.onload = function(){
     charsize = document.getElementById("charsize").offsetWidth;
