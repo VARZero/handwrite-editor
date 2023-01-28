@@ -36,11 +36,8 @@ function LineClick(event){
 }
 
 function EditLine(Line){
-    TextOn = document.createElement("canvas"); TextOn.id = "ton";
-    TextArea = document.querySelector("div.Editing > span");
-    TextLineRight = document.createElement("canvas"); TextLineRight.id = "cright";
-    TextLineBottom = document.createElement("canvas"); TextLineBottom.id = "cbottom";
-    TextArea.appendChild(TextOn); Line.appendChild(TextLineRight); Line.appendChild(TextLineBottom);
+    TextOn = document.createElement("canvas");
+    Line.appendChild(TextOn);
 }
 
 function NewLine(Sepr){

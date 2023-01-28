@@ -97,27 +97,11 @@ div.OneLine > div.LineText.Editing{
     font-family: 'Shadows Into Light';
 }
 
-div.LineText.Editing > div > canvas{
+div.LineText.Editing > canvas{
     position: absolute;
     width: 100%;
     height: 100%;
     background-color: violet;
-}
-
-div.LineText.Editing > canvas#cright{
-    position: absolute;
-    background-color: green; opacity: 0.4;
-    right: 100%;
-    height: ;
-}
-
-div.LineText.Editing > canvas#cbottom{
-    position: absolute;
-    background-color: red; opacity: 0.4;
-    bottom: 0;
-    left: 0;
-    width:  100%;
-    height: calc(100% - var(--textsize));
 }
 
 div.OneLine > div.LineSepr{
@@ -134,8 +118,6 @@ div.OneLine > div.LineSepr.Editing{
 div.LineSepr > canvas{
     position: absolute;
     background-color: red; opacity: 0.4;
-    top: 0;
-    left: 0;
     width:  100%;
     height: 100%;
 }
