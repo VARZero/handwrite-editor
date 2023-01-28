@@ -32,24 +32,28 @@ function LineClick(event){
     LineType = Line.className;
     Line.className += " Editing";
     Num = document.querySelector("#"+LineNum+".OneNum");
-    if (LineType == "LineText"){ Num.className += " Selecting"; }
+    if (LineType == "LineText"){ Num.className += " Selecting"; EditLine(Line); }
     else if (LineType == "LineSepr"){ Num.className += " NewLine"; NewLine(Line); }
 }
 
 function EditLine(Line){
     TextOn = document.createElement("canvas");
     Line.appendChild(TextOn);
-    EnableCanv = TextOn;
+    EnableCanv = TextOn; ctx = EnableCanv.getContext("2d");
 }
 
 function NewLine(Sepr){
     TextCanv = document.createElement("canvas");
     Sepr.appendChild(TextCanv);
-    EnableCanv = TextCanv;
+    EnableCanv = TextCanv; ctx = EnableCanv.getContext("2d");
 }
 
 function palmRejection(){
     // 팜리젝션
+    
+}
+
+function canvasEL(){
     
 }
 
