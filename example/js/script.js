@@ -1,6 +1,6 @@
 let charsize, tabsize;
 let palmRjEnable = 0;
-let EnableCanv = null;
+let EnableCanv = null, ctx = null;
 
 function processPostElem(){
     // 이전 편집상태 삭제
@@ -18,6 +18,7 @@ function processPostElem(){
             document.getElementsByClassName("NewLine")[0].classList.remove("NewLine");
         }
     }
+    EnableCanv = null; ctx = null;
 }
 
 function LineClick(event){
@@ -38,11 +39,13 @@ function LineClick(event){
 function EditLine(Line){
     TextOn = document.createElement("canvas");
     Line.appendChild(TextOn);
+    EnableCanv = TextOn;
 }
 
 function NewLine(Sepr){
     TextCanv = document.createElement("canvas");
     Sepr.appendChild(TextCanv);
+    EnableCanv = TextCanv;
 }
 
 function palmRejection(){
@@ -50,15 +53,9 @@ function palmRejection(){
     
 }
 
-
-
 window.onload = function(){
     charsize = document.getElementById("charsize").offsetWidth;
     tabsize = charsize * 4;
-
-    editor = document.getElementById('editor');
-    editor.addEventListener("pointerover", function(e){console.log(e);});
-    editor.addEventListener("pointerleave", function(e){console.log(e);})
 
     LTs = document.getElementsByClassName("LineText");
     LSs = document.getElementsByClassName("LineSepr");
