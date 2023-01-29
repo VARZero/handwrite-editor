@@ -78,12 +78,12 @@ div#AreaLine{
 
 div.OneLine{
     box-sizing: border-box;
-    padding-left: 4px;
     height: 100%; width: 100%;
     user-select: none;
 }
 
 div.OneLine > div.LineText{
+    padding-left: 4px;
     height: var(--textsize); font-size: var(--textsize);
     color: white;
 }
@@ -106,6 +106,7 @@ div.LineText.Editing > canvas{
 }
 
 div.OneLine > div.LineSepr{
+    padding-left: 4px;
     height: calc(var(--textsize) * 0.8); width: 100%;
     color: gray;
 }
