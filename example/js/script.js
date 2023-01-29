@@ -49,7 +49,7 @@ function EditLine(Line){
     EnableCanv.addEventListener("pointerdown", canvasAt);
     EnableCanv.addEventListener("pointermove", canvasEL);
     EnableCanv.addEventListener("pointerup", canvasDs);
-    ctx.lineWidth = 5; ctx.lineCap = "round"; ctx.strokeStyle = black;
+    ctx.lineWidth = 2; ctx.lineCap = "round"; ctx.strokeStyle = white;
 }
 
 function NewLine(Sepr){
@@ -59,7 +59,7 @@ function NewLine(Sepr){
     EnableCanv.addEventListener("pointerdown", canvasAt);
     EnableCanv.addEventListener("pointermove", canvasNL);
     EnableCanv.addEventListener("pointerup", canvasDs);
-    ctx.lineWidth = 5; ctx.lineCap = "round"; ctx.strokeStyle = black;
+    ctx.lineWidth = 2; ctx.lineCap = "round"; ctx.strokeStyle = white;
 }
 
 function palmRejection(){
