@@ -1,6 +1,6 @@
 let charsize, tabsize;
 let palmRjEnable = 0;
-let EnableCanv = null, ctx = null;
+let EnableCanv = null, ctx = null, WriteActv = 0; WriteFirst = 0;
 
 function processPostElem(){
     // 이전 편집상태 삭제
@@ -13,14 +13,18 @@ function processPostElem(){
         postSelc = document.getElementsByClassName("Selecting");
         if (postSelc.length != 0){
             postSelc[0].classList.remove("Selecting");
-            EnableCanv.removeEventListener("pointerdown", canvasEL);
+            EnableCanv.removeEventListener("pointerdown", canvasAt);
+            EnableCanv.removeEventListener("pointermove", canvasEL);
+            EnableCanv.removeEventListener("pointerup", canvasDs);
         }
         else{
             document.getElementsByClassName("NewLine")[0].classList.remove("NewLine");
-            EnableCanv.removeEventListener("pointerdowm", canvasNL);
+            EnableCanv.removeEventListener("pointerdowm", canvasAt);
+            EnableCanv.removeEventListener("pointermove", canvasNL);
+            EnableCanv.removeEventListener("pointerup", canvasDs);
         }
     }
-    EnableCanv = null; ctx = null;
+    EnableCanv = null; ctx = null; WriteActv = 0; WriteFirst = 0;
 }
 
 function LineClick(event){
@@ -42,14 +46,18 @@ function EditLine(Line){
     TextOn = document.createElement("canvas");
     Line.appendChild(TextOn);
     EnableCanv = TextOn; ctx = EnableCanv.getContext("2d");
-    TextOn.addEventListener("pointerdowm", canvasEL(event));
+    EnableCanv.addEventListener("pointerdown", canvasAt);
+    EnableCanv.addEventListener("pointermove", canvasEL);
+    EnableCanv.addEventListener("pointerup", canvasDs);
 }
 
 function NewLine(Sepr){
     TextCanv = document.createElement("canvas");
     Sepr.appendChild(TextCanv);
     EnableCanv = TextCanv; ctx = EnableCanv.getContext("2d");
-    TextSepr.addEventListener("pointerdown", canvasNL(event));
+    EnableCanv.addEventListener("pointerdown", canvasAt);
+    EnableCanv.addEventListener("pointermove", canvasNL);
+    EnableCanv.addEventListener("pointerup", canvasDs);
 }
 
 function palmRejection(){
@@ -57,12 +65,25 @@ function palmRejection(){
     
 }
 
+function canvasAt(){WriteActv = 1;}
+function canvasDs(){WriteActv = 0;}
+
 function canvasEL(e){
-    console.log(e)
+    xx = e.offsetX; yy = e.offsetY;
+    if (!WriteActv){return;}
+    ctx.beginPath();
+    ctx.moveTo(xx, yy);
+    ctx.lineTo(xx, yy);
+    ctx.stroke();
 }
 
 function canvasNL(e){
-
+    xx = e.offsetX; yy = e.offsetY;
+    if (!WriteActv){return;}
+    ctx.beginPath();
+    ctx.moveTo(xx, yy);
+    ctx.lineTo(xx, yy);
+    ctx.stroke();
 }
 
 window.onload = function(){
