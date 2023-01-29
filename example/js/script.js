@@ -13,9 +13,11 @@ function processPostElem(){
         postSelc = document.getElementsByClassName("Selecting");
         if (postSelc.length != 0){
             postSelc[0].classList.remove("Selecting");
+            EnableCanv.removeEventListener("pointerdown", canvasEL);
         }
         else{
             document.getElementsByClassName("NewLine")[0].classList.remove("NewLine");
+            EnableCanv.removeEventListener("pointerdowm", canvasNL);
         }
     }
     EnableCanv = null; ctx = null;
@@ -40,12 +42,14 @@ function EditLine(Line){
     TextOn = document.createElement("canvas");
     Line.appendChild(TextOn);
     EnableCanv = TextOn; ctx = EnableCanv.getContext("2d");
+    TextOn.addEventListener("pointerdowm", canvasEL(event));
 }
 
 function NewLine(Sepr){
     TextCanv = document.createElement("canvas");
     Sepr.appendChild(TextCanv);
     EnableCanv = TextCanv; ctx = EnableCanv.getContext("2d");
+    TextSepr.addEventListener("pointerdown", canvasNL(event));
 }
 
 function palmRejection(){
@@ -53,8 +57,12 @@ function palmRejection(){
     
 }
 
-function canvasEL(){
-    
+function canvasEL(e){
+    console.log(e)
+}
+
+function canvasNL(e){
+
 }
 
 window.onload = function(){
