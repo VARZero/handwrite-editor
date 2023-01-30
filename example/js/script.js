@@ -43,23 +43,21 @@ function LineClick(event){
 }
 
 function EditLine(Line){
-    TextOn = document.createElement("canvas");
-    Line.appendChild(TextOn);
+    Line.innerHTML += "<canvas width='100px' height='3000px'></canvas>"; TextOn = document.querySelector("div.LineText.Editing > canvas");
     EnableCanv = TextOn; ctx = EnableCanv.getContext("2d");
     EnableCanv.addEventListener("pointerdown", canvasAt);
     EnableCanv.addEventListener("pointermove", canvasEL);
     EnableCanv.addEventListener("pointerup", canvasDs);
-    ctx.lineWidth = 2; ctx.lineCap = "round"; ctx.strokeStyle = "#fff";
+    ctx.lineWidth = 5; ctx.lineCap = "round"; ctx.strokeStyle = "#fff";
 }
 
 function NewLine(Sepr){
-    TextCanv = document.createElement("canvas");
-    Sepr.appendChild(TextCanv);
+    Sepr.innerHTML += "<canvas width='100px' height='3000px'></canvas>"; TextCanv = document.querySelector("div.LineSepr.Editing > canvas");
     EnableCanv = TextCanv; ctx = EnableCanv.getContext("2d");
     EnableCanv.addEventListener("pointerdown", canvasAt);
     EnableCanv.addEventListener("pointermove", canvasNL);
     EnableCanv.addEventListener("pointerup", canvasDs);
-    ctx.lineWidth = 2; ctx.lineCap = "round"; ctx.strokeStyle = "#fff";
+    ctx.lineWidth = 5; ctx.lineCap = "round"; ctx.strokeStyle = "#fff";
 }
 
 function palmRejection(){

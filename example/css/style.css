@@ -100,8 +100,6 @@ div.OneLine > div.LineText.Editing{
 div.LineText.Editing > canvas{
     position: absolute;
     top: 0; left: 0;
-    width: 100%;
-    height: 100%;
 }
 
 div.OneLine > div.LineSepr{
@@ -119,6 +117,4 @@ div.OneLine > div.LineSepr.Editing{
 div.LineSepr.Editing > canvas{
     position: absolute;
     top: 0; left: 0;
-    width:  100%;
-    height: 100%;
 }
