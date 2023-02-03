@@ -1,0 +1,61 @@
+:root{
+    --fontsize: 14px;
+}
+
+body{
+    overflow: hidden;
+    user-select: none;
+    margin: 0; padding: 0;
+    height: 100vh; width: 100vw;
+}
+
+section#sys{
+    display: none;
+}
+
+div#editor{
+    height: 100%; width: 100%;
+    font-family: monospace;
+    font-size: var(--fontsize);
+}
+
+div.OneLine{
+    width: 100%;
+    display: flex;
+}
+
+div#Num{
+    display: flex;
+}
+
+div#Num > button{
+    border: none; background: none;
+}
+
+div#LNum{
+    min-width: calc(var(--fontsize) * 3);
+    text-align: right;
+}
+
+div#Text{
+    width: 100%;
+}
+
+div#LText{
+    width: 100%;
+    position: relative;
+}
+
+div#LText.editing{
+    height: calc(var(--fontsize) * 4);
+}
+
+div#LSepr{
+    width: 100%;
+    position: relative;
+    height: var(--fontsize);
+}
+
+div#LSepr.editing{
+    height: calc(var(--fontsize) * 3);
+}
