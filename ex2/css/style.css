@@ -34,7 +34,7 @@ div#Num > button{
 }
 
 div#LNum{
-    min-width: calc(var(--fontsize) * 3);
+    min-width: calc(var(--fontsize) * 2);
     text-align: right;
 }
 
