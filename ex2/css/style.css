@@ -28,6 +28,7 @@ div.OneLine{
 
 div#Num{
     display: flex;
+    vertical-align: top;
     padding-bottom: var(--fontsize);
 }
 
