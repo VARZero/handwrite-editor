@@ -51,12 +51,12 @@ div#LText.editing{
     height: calc(var(--fontsize) * 4);
 }
 
-div#LSepr{
+div.LSepr{
     width: 100%;
     position: relative;
     height: var(--fontsize);
 }
 
-div#LSepr.editing{
+div.LSepr.editing{
     height: calc(var(--fontsize) * 3);
 }
