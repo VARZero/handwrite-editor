@@ -10,7 +10,9 @@ body{
 }
 
 section#sys{
-    display: none;
+    position: absolute;
+    top: -9999;
+    visibility: hidden;
 }
 
 div#editor{
