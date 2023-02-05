@@ -34,7 +34,7 @@ div#Num{
 
 div#Num > button{
     border: none; background: none;
-    height: var(--fontsize); width: var(--fontsize);
+    height: var(--fontsize);
 }
 
 div#LNum{
