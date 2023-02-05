@@ -1,12 +1,17 @@
 let fontsize = Number(getComputedStyle(document.documentElement).getPropertyValue("--fontsize").replace(/[^0-9]/g,""));
 let maxDL;
-let FileLineEnd = 1;
-const editor = document.getElementById("editor");
-const OneLine = document.querySelector("#sys > div.OneLine")
+let FileLineEnd = 1, ScrollFirstLine = 1;
 
+function OneTextSize(){
+    return document.getElementById("#textsize").offsetWidth;
+}
 
 function LineCount(){
-    maxDL = window.innerWidth / (fontsize * 2); return maxDL;
+    return window.innerWidth / (fontsize * 2);
+}
+
+function FileReadtoLocal(){
+    
 }
 
 function DisplayTextLines(DLStart){
@@ -21,4 +26,17 @@ function DisplayTextLines(DLStart){
 
 function NewLine(){
 
+}
+
+document.onload = function(){
+    const editor = document.getElementById("editor");
+    const OneLine = document.querySelector("#sys > div.OneLine");
+    const FileText = document.getElementById("FileText");
+
+    LineCount();
+}
+
+document.onresize = function(){
+    LineCount();
+    DisplayTextLines();
 }
