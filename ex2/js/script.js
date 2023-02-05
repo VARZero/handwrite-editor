@@ -25,7 +25,9 @@ function DisplayTextLines(DLStart){
     if (editor.childNodes.length != 0){ editor.removeChild(); }
     for (Line=1; ((Line+DLStart-1)<=maxDL && (Line+DLStart-1)<=Texts.length+1); Line+=1){
         Oline = OneLine.cloneNode(true); Oline.id += String(Line);
-        Oline.text = Texts[Line+DLStart-1];
+        Oline.children[0].children[1].text = Line+DLStart-1;
+        Oline.children[1].children[0].innerText = Texts[Line+DLStart-1];
+        if (Oline.children[1].children[0].innerText = ""){ Oline.children[1].children[0].innerText = "ㅤ"; }
         editor.appendChild(Oline);
     }
 }
