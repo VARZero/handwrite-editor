@@ -1,3 +1,4 @@
+let editor, OneLine, FileText;
 let fontsize = Number(getComputedStyle(document.documentElement).getPropertyValue("--fontsize").replace(/[^0-9]/g,""));
 let maxDL;
 let FileLineEnd = 1, ScrollFirstLine = 1;
@@ -34,9 +35,9 @@ function NewLine(){
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    const editor = document.getElementById("editor");
-    const OneLine = document.querySelector("section#sys > div.OneLine");
-    const FileText = document.getElementById("FileText");
+    editor = document.getElementById("editor");
+    OneLine = document.querySelector("section#sys > div.OneLine");
+    FileText = document.getElementById("FileText");
 
     maxDL = LineCount();
     DisplayTextLines(1);
