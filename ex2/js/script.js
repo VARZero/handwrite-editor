@@ -33,14 +33,14 @@ function NewLine(){
 
 }
 
-document.onload = function(){
+document.addEventListener("DOMContentLoaded", () => {
     const editor = document.getElementById("editor");
     const OneLine = document.querySelector("section#sys > div.OneLine");
     const FileText = document.getElementById("FileText");
 
     maxDL = LineCount();
     DisplayTextLines(1);
-}
+});
 
 document.onresize = function(){
     maxDL = LineCount();
