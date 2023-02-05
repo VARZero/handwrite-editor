@@ -22,7 +22,7 @@ function FileToListbyLine(text){
 function DisplayTextLines(DLStart){
     // 지금까지 작성된 코드 내보내기 부분 필요
     if (editor.childNodes.length != 0){ editor.removeChild(); }
-    for (Line=1; ((Line+DLStart-1)<=maxDL || (Line+DLStart-1)<=Texts.length+1); Line+=1){
+    for (Line=1; ((Line+DLStart-1)<=maxDL or (Line+DLStart-1)<=Texts.length+1); Line+=1){
         Oline = OneLine.cloneNode(); Oline.id += String(Line);
         Oline.text = Texts[Line+DLStart-1];
         editor.appendChild(Oline);
@@ -35,13 +35,14 @@ function NewLine(){
 
 document.onload = function(){
     const editor = document.getElementById("editor");
-    const OneLine = document.querySelector("#sys > div.OneLine");
+    const OneLine = document.querySelector("section#sys > div.OneLine");
     const FileText = document.getElementById("FileText");
 
-    LineCount();
+    maxDL = LineCount();
+    DisplayTextLines(1);
 }
 
 document.onresize = function(){
-    LineCount();
-    DisplayTextLines();
+    maxDL = LineCount();
+    DisplayTextLines(1);
 }
