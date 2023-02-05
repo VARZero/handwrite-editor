@@ -35,6 +35,15 @@ div#Num{
 div#Num > button{
     border: none; background: none;
     height: var(--fontsize);
+    opacity: 0;
+}
+
+div#Num > button:hover{
+    opacity: 0.5;
+}
+
+div#Num > button.Enable{
+    opacity: 1;
 }
 
 div#LNum{
