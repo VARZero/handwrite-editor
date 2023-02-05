@@ -24,7 +24,7 @@ function DisplayTextLines(DLStart){
     // 지금까지 작성된 코드 내보내기 부분 필요
     if (editor.childNodes.length != 0){ editor.removeChild(); }
     for (Line=1; ((Line+DLStart-1)<=maxDL || (Line+DLStart-1)<=Texts.length+1); Line+=1){
-        Oline = OneLine.cloneNode(); Oline.id += String(Line);
+        Oline = OneLine.cloneNode(true); Oline.id += String(Line);
         Oline.text = Texts[Line+DLStart-1];
         editor.appendChild(Oline);
     }
