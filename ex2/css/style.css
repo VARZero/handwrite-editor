@@ -22,6 +22,7 @@ div#editor{
 }
 
 div.OneLine{
+    position: relative;
     width: 100%;
     display: flex;
 }
@@ -34,7 +35,7 @@ div#Num{
 
 div#Num > button{
     border: none; background: none;
-    height: var(--fontsize);
+    height: 1em;
     opacity: 0;
 }
 
@@ -56,6 +57,7 @@ div#Text{
 }
 
 div#LText{
+    height: 1em;
     width: 100%;
     position: relative;
 }
@@ -66,7 +68,8 @@ div#LText.editing{
 
 div.LSepr{
     width: 100%;
-    position: relative;
+    position: absolute;
+    bottom: -2px;
     height: var(--fontsize);
 }
 

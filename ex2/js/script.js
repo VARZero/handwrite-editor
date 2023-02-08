@@ -5,7 +5,7 @@ let FileLineEnd = 1, ScrollFirstLine = 1;
 let Texts = [];
 
 function OneTextSize(){
-    return document.getElementById("#textsize").offsetWidth;
+    return document.getElementById("textsize").offsetWidth;
 }
 
 function LineCount(){
