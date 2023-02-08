@@ -48,6 +48,7 @@ div#Num > button.Enable{
 }
 
 div#LNum{
+    height: 1em;
     min-width: calc(var(--fontsize) * 2);
     text-align: right;
 }
@@ -67,6 +68,7 @@ div#LText.editing{
 }
 
 div.LSepr{
+    display: none;
     width: 100%;
     position: absolute;
     bottom: -2px;
