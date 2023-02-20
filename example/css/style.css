@@ -12,6 +12,8 @@ body{
     background-color: #001022;
     font-family: "D2Coding" ,Menlo, Monaco, 'Courier New', monospace;
     color: white;
+    user-select: none;
+    overflow: hidden;
 }
 
 section#hidden{

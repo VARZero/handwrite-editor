@@ -9,6 +9,10 @@ body{
     height: 100vh; width: 100vw;
 }
 
+canvas{
+    touch-action: none;
+}
+
 section#sys{
     position: absolute;
     top: -9999px;
@@ -17,7 +21,7 @@ section#sys{
 
 div#editor{
     height: 100%; width: 100%;
-    font-family: monospace;
+    font-family: Consolas, monospace;
     font-size: var(--fontsize);
 }
 
@@ -25,12 +29,13 @@ div.OneLine{
     position: relative;
     width: 100%;
     display: flex;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
 }
 
 div#Num{
     display: flex;
     vertical-align: top;
-    padding-bottom: var(--fontsize);
 }
 
 div#Num > button{
@@ -67,14 +72,24 @@ div#LText.editing{
     height: calc(var(--fontsize) * 4);
 }
 
-div.LSepr{
-    display: none;
-    width: 100%;
+div#LText.editing > canvas{
     position: absolute;
-    bottom: -2px;
-    height: var(--fontsize);
+    width: 100%; height: 100%;
+    top: 0; left: 0;
+}
+
+div.LSepr{
+    position: absolute;
+    width: 100%;
+    top: -0.05em;
+    height: 0.05em;
+    display: flex;
 }
 
 div.LSepr.editing{
     height: calc(var(--fontsize) * 3);
+}
+
+div.LSepr > div{
+    display: none;
 }
