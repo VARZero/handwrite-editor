@@ -11,6 +11,9 @@ body{
 
 canvas{
     touch-action: none;
+    position: absolute;
+    width: 100%; height: 100%;
+    top: 0; left: 0;
 }
 
 section#sys{
@@ -30,7 +33,6 @@ div.OneLine{
     width: 100%;
     display: flex;
     padding-top: 0.2em;
-    padding-bottom: 0.2em;
 }
 
 div#Num{
@@ -66,30 +68,52 @@ div#LText{
     height: 1em;
     width: 100%;
     position: relative;
+    padding-bottom: 0.1em;
 }
 
 div#LText.editing{
     height: calc(var(--fontsize) * 4);
-}
-
-div#LText.editing > canvas{
-    position: absolute;
-    width: 100%; height: 100%;
-    top: 0; left: 0;
+    box-shadow: 2px 2px 2px gray;
 }
 
 div.LSepr{
-    position: absolute;
-    width: 100%;
-    top: -0.05em;
-    height: 0.05em;
+    position: relative;
+    height: 0.1em; width: 2em;
     display: flex;
+}
+
+div.LSepr.hoverPen{
+    width: 100%; height: 1ex;
 }
 
 div.LSepr.editing{
     height: calc(var(--fontsize) * 3);
+    width: 100%;
+    border-top: 1px dashed black;
+    box-shadow: 2px 2px 2px gray;
 }
 
 div.LSepr > div{
+    font-size: 10px;
+    width: 2rem; height: 1em;
+    text-align: left;
+    position: absolute;
+    top: 0; left: 0;
+    display: none;
+    background-color: white;
+    box-shadow: 2px 2px 2px gray;
+}
+
+div.LSepr.hoverPen > div{
+    display: block;
+    opacity: 0;
+}
+
+div.LSepr > div:hover{
+    display: block;
+    opacity: 1;
+}
+
+div.LSepr.editing > div{
     display: none;
 }
