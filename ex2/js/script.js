@@ -80,7 +80,7 @@ function DeleteCanv(){
         ctx = undefined;
         activeDraw = 0;
         pp = [undefined, undefined];
-        firstPoint = [[undefined, undefined],[undefined, undefined]];
+        firstPoint = [undefined, undefined];
     }
 }
 
@@ -117,6 +117,7 @@ function TextSeprinPD(e){
 function CanvinPD(e){
     if (e.pointerType == "pen"){
         activeDraw = 1;
+        if (firstPoint[0] != undefined){return;}
         firstPoint = [e.offsetX, e.offsetY];
     }
 }
@@ -133,7 +134,6 @@ function CanvinPU(e){
         clearTimeout(setTime);
         setTime = setTimeout(prcLine, 1000, canvasN.parentNode.id == "LText" ? false : true, [firstPoint[0], firstPoint[1], e.offsetX]);
         pp = [undefined, undefined];
-        firstPoint = [undefined, undefined];
     }
 }
 
@@ -166,38 +166,51 @@ function setCanvasDR([nxx, nyy], [pxx, pyy]){
 }
 
 function prcLine(lineAdd, firstPointXY){
+    var space = false; var type = 0;
+    firstPoint = [undefined, undefined];
     // 라인을 지우는건지 글을 추가하는 건지 글자가 추가 되는건지 확인
     if (activeDraw == 1){return;}
 
-    console.log(firstPointXY);
+    // 글자 너비
+    startT = parseInt((firstPointXY[0] < firstPointXY[2] ? firstPointXY[0] : firstPointXY[2]) / OneTextSize());
+    textLen = parseInt(Math.abs(firstPointXY[2] - firstPointXY[0]) / OneTextSize());
+    maxLen = canvasN.parentNode.innerText.length;
+
     if (lineAdd == true){
-        console.log("Add Line")
+        console.log("Add Line");
     }
-    else if (firstPointXY[1] >= (fontsize*0.2) && firstPointXY[1] < (fontsize*0.8)){
-        // 글 제거;
-        OneTextSize();
-        console.log("Delete Line");
+    // 글자 높이 구분 + 후방 너비 확인
+    else if (firstPointXY[1] >= (fontsize*0.2) && firstPointXY[1] < (fontsize*0.8) && startT < maxLen){
+        // 글 제거
+        type = 1;
+        console.log("Delete Line: start-" + startT + " to end-" + (startT+textLen) );
     }
-    else if (firstPointXY[1] >= (fontsize*0.8) && firstPointXY[1] < (fontsize*1.5)){
-        // 글 수정;
+    else if (firstPointXY[1] >= (fontsize*0.8) && firstPointXY[1] < (fontsize*2) && startT < maxLen){
+        // 글 수정
+        type = 2;
         console.log("Edit Line");
     }
-    else{
-        console.log("Add Text in Line");
+    else if (startT > maxLen){
+        space = (startT > maxLen + 4) ? true : false;
+        console.log("Add Text in Line, Space is "+space);
     }
 
+    console.log(firstPointXY);
+
     img = canvasN.toDataURL();
-    text = prcOCR(img, canvasN, false);
+    text = prcOCR(img, canvasN, space, type);
     ctx.clearRect(0, 0, canvasN.width, canvasN.height);
 }
 
-async function prcOCR(img, NowCanvas, addSpace){
+async function prcOCR(img, NowCanvas, addSpace, type){
     out = await Tesseract.recognize(img, "eng", {
         workerPath: 'https://unpkg.com/tesseract.js@v4.0.1/dist/worker.min.js',
         langPath: 'https://tessdata.projectnaptha.com/4.0.0',
         corePath: 'https://unpkg.com/tesseract.js-core@v4.0.1/tesseract-core.wasm.js',
     });
+    console.log(addSpace);
     console.log(out);
+    
     //NowCanvas.parentNode.children[0].innerText += String((addSpace ? " " : "") + out.data.text).replace("\n","");
     
 }
