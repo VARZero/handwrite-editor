@@ -176,6 +176,8 @@ function prcLine(lineAdd, firstPointXY){
     textLen = parseInt(Math.abs(firstPointXY[2] - firstPointXY[0]) / OneTextSize());
     maxLen = canvasN.parentNode.innerText.length;
 
+    console.log(startT+" "+textLen+" "+maxLen);
+
     if (lineAdd == true){
         console.log("Add Line");
     }
